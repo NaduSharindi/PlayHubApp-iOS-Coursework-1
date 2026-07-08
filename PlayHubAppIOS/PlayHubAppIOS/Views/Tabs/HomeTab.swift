@@ -8,22 +8,12 @@
 import SwiftUI
 
 struct HomeTab: View {
-    @AppStorage("playerName") private var playerName = ""
     var body: some View {
         NavigationStack {
             VStack(spacing: 30) {
                 Text("PlayHub")
                     .font(.system(size: 40, weight: .heavy))
                     .padding(.top, 40)
-                
-                // Add a greeting message
-                                Text("Welcome back, \(playerName)!")
-                                    .font(.title3)
-                                    .foregroundColor(.blue)
-
-                                Text("Select a Game Mode")
-                                    .font(.headline)
-                                    .foregroundColor(.secondary)
                 
                 Text("Select a Game ")
                     .font(.headline)

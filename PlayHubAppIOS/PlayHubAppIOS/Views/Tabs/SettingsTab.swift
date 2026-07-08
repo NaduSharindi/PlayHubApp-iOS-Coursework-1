@@ -45,7 +45,6 @@ struct SettingsTab: View {
                     tapScore = 0
                     lightScore = 0
                     quizScore = 0
-                    playerName = "" 
                 }
             } message: {
                 Text("This action cannot be undone. All your game statistics will be set to 0.")
