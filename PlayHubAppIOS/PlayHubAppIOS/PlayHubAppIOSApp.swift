@@ -6,16 +6,12 @@
 //
 
 import SwiftUI
-import CoreData
 
 @main
-struct PlayHubAppIOSApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct PlayHubAppApp: App {
     var body: some Scene {
         WindowGroup {
-            TapFrenzyView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MainTabView()
         }
     }
 }
