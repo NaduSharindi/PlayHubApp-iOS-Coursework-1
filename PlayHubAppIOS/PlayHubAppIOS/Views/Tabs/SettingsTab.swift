@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsTab: View {
     @State private var reminderTime = Date()
+    @AppStorage("playerName") private var playerName = ""
     @AppStorage("tapFrenzyHighScore") private var tapScore = 0
     @AppStorage("lightItUpHighScore") private var lightScore = 0
     @AppStorage("quizRushHighScore") private var quizScore = 0
@@ -44,6 +45,7 @@ struct SettingsTab: View {
                     tapScore = 0
                     lightScore = 0
                     quizScore = 0
+                    playerName = "" 
                 }
             } message: {
                 Text("This action cannot be undone. All your game statistics will be set to 0.")

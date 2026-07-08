@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct PlayHubAppApp: App {
+    // Read the saved name
+        @AppStorage("playerName") private var playerName = ""
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            // If the name is empty, show the Welcome screen
+            if playerName.isEmpty {
+                WelcomeView()
+            } else {
+                // Otherwise, load the normal 4-tab shell
+                MainTabView()
+            }
         }
     }
 }
