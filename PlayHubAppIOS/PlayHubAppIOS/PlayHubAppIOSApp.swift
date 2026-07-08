@@ -14,7 +14,7 @@ struct PlayHubAppIOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TapFrenzyView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
