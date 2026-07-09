@@ -82,7 +82,7 @@ struct LightItUpView: View {
                         Spacer()
                         Text("Level: \(levelName)")
                             .font(.headline)
-                            .foregroundColor(.orange)
+                            .foregroundColor(.indigo) // Swapped from orange to indigo
                         Spacer()
                         Text(String(format: "Time: %.0fs", timeRemaining))
                             .font(.title2)
@@ -96,15 +96,16 @@ struct LightItUpView: View {
                         ForEach(cards) { card in
                             Button(action: { handleTap(on: card) }) {
                                 RoundedRectangle(cornerRadius: 15)
-                                    .fill(card.isLit ? Color.yellow : Color.gray.opacity(0.3))
+                                    .fill(card.isLit ? Color.cyan : Color.indigo.opacity(0.15)) // Swapped to neon cyan / deep indigo
                                     .frame(height: 100)
                                     .overlay(
                                         Text(card.isLit ? "TAP!" : "")
                                             .font(.headline)
-                                            .foregroundColor(.black)
+                                            .foregroundColor(.white) // White text on cyan glow
                                     )
                                     .scaleEffect(card.isLit ? 1.05 : 1.0)
                                     .animation(.spring(), value: card.isLit)
+                                    .shadow(color: card.isLit ? .cyan.opacity(0.6) : .clear, radius: 8) // Added neon glow
                             }
                         }
                     }

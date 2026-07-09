@@ -66,7 +66,7 @@ struct QuizRushView: View {
                                     Text("🔥 \(viewModel.streak) Streak!")
                                         .font(.subheadline)
                                         .bold()
-                                        .foregroundColor(.orange)
+                                        .foregroundColor(.mint) // Swapped to fresh mint green
                                 }
                                 Spacer()
                                 Text("\(viewModel.currentIndex + 1) of 10")
@@ -83,7 +83,7 @@ struct QuizRushView: View {
                                 .multilineTextAlignment(.center)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(Color.purple.opacity(0.1))
+                                .background(Color.blue.opacity(0.12)) // Swapped from purple to soft blue
                                 .cornerRadius(15)
                                 .padding(.horizontal)
                             
@@ -102,10 +102,10 @@ struct QuizRushView: View {
                                             .bold()
                                             .padding()
                                             .frame(maxWidth: .infinity)
-                                            .background(Color.purple)
+                                            .background(Color.blue) // Swapped from purple to vibrant royal blue
                                             .foregroundColor(.white)
                                             .cornerRadius(12)
-                                            .shadow(radius: 3)
+                                            .shadow(color: .blue.opacity(0.3), radius: 4, x: 0, y: 2)
                                     }
                                 }
                             }

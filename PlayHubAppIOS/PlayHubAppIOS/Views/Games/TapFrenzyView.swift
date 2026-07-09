@@ -41,6 +41,7 @@ struct TapFrenzyView: View {
                         Text("Score: \(score)")
                             .font(.title2)
                             .bold()
+                            .foregroundColor(.orange) // Changed color
                         Spacer()
                         Text(String(format: "Time: %.1fs", timeRemaining))
                             .font(.title2)
@@ -55,10 +56,10 @@ struct TapFrenzyView: View {
                         Text("TAP!")
                             .font(.system(size: 24, weight: .black))
                             .frame(width: buttonSize, height: buttonSize)
-                            .background(Color.green)
+                            .background(Color.red) // Swapped from green to intense red
                             .foregroundColor(.white)
                             .clipShape(Circle())
-                            .shadow(radius: 5)
+                            .shadow(color: .red.opacity(0.5), radius: 8, x: 0, y: 4) // Added matching glow
                     }
                     .disabled(timeRemaining <= 0)
                     .offset(x: offsetX, y: offsetY) // Challenge 2: Target jump
@@ -106,7 +107,7 @@ struct TapFrenzyView: View {
             highScore = score
         }
         
-        // RECRODS COMPLETED SESSION FOR STATS CHARTS & MAP PINS
+        // RECORDS COMPLETED SESSION FOR STATS CHARTS & MAP PINS
         StatsVM.shared.addSession(mode: .tapFrenzy, score: score)
     }
     
